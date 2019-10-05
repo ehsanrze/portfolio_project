@@ -1,4 +1,5 @@
 from django.shortcuts import render
-
+from .models import Blog
 def blog(request):
-	return render(request , 'blog.html')
+	allblog = Blog.objects
+	return render(request , 'blog.html' , {'blogs':allblog})
