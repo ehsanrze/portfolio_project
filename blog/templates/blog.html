@@ -1,6 +1,7 @@
 
 <!doctype html>
 <html lang="en">
+{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +45,7 @@
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About me</a>
+        <a class="nav-item nav-link active" href="{% static 'resume.pdf' %}" tabindex="-1" aria-disabled="true">About me</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -71,7 +72,7 @@
           {%for blog in blogs.all%}
           <div class="blog-post">
             <h2 class="blog-post-title">{{blog.title}}</h2>
-            <p class="blog-post-meta">{{blog.pub_date}}</a></p>
+            <p class="blog-post-meta">{{blog.date}}</a></p>
             <p>{{blog.body}}</p>
           </div><!-- /.blog-post -->
           {% endfor %}
